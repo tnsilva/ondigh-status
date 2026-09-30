@@ -1,33 +1,55 @@
-# Nome do site de status
-name: Ondigh Status
-# URL onde o site ficará hospedado
-url: https://status.ondigh.com.br
-# Link para o site principal no cabeçalho
+# ==============================================================================
+# CONFIGURAÇÃO CORE DO REPOSITÓRIO (Correção do erro "Owner/repo not set")
+# ==============================================================================
+owner: tnsilva
+repo: ondigh-status
+
+# Nome do painel visual e link do subdomínio customizado mapeado
+name: Status do Sistema | Ondigh
+cname: ://ondigh.com.br
+baseUrl: /
+
+# Link de navegação para retornar ao site principal
 navbar:
-  - title: Ondigh Home
+  - title: Voltar para Ondigh
     url: https://ondigh.com.br
 
-# Configuração dos monitores (as APIs que você quer acompanhar)
+# ==============================================================================
+# CONFIGURAÇÃO DOS MONITORES (Mapeamento das suas APIs)
+# ==============================================================================
 sites:
-  - name: Ondigh API Health
-    url: https://ondigh.com.br/api/health
+  - name: Ondigh API
+    url: https://ondigh.com
     method: GET
-    # Você pode adicionar expectativa de status se necessário (padrão é 2xx)
+    assignees:
+      - tnsilva
 
-  - name: Mercado Pago Status API
+  - name: Gateway Mercado Pago
     url: https://api.mercadopago.com/status
     method: GET
+    assignees:
+      - tnsilva
 
-  - name: Supabase Project API
-    # Substitua pelo subdomínio real do seu projeto do Supabase se preferir monitorar sua instância direta
+  - name: Supabase Platform
     url: https://status.supabase.com
     method: GET
+    assignees:
+      - tnsilva
 
-# Configurações de notificação (opcional - remova o comentário para usar)
-# notifications:
-#   - type: discord
-#     webhookUrl: "$DISCORD_WEBHOOK_URL"
+# ==============================================================================
+# CONFIGURAÇÕES ADICIONAIS DO MONITORAMENTO
+# ==============================================================================
+# Define que os testes rodam a cada 5 minutos
+workflowSchedule:
+  graphs: "0 0 * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "0 0 * * *"
+  uptime: "*/5 * * * *"
 
-# Configurações do Upptime
-assignees:
-  - ondigh # Seu usuário ou organização do GitHub
+# Configurações de exibição do gráfico de histórico
+commitMessages:
+  readme: ":memo: Update README [skip ci]"
+  summary: ":card_index: Update status summary [skip ci]"
+  statusChange: ":m: Status changed for $ENDPOINT"
+  graphs: ":chart_with_upwards_trend: Update graphs [skip ci]"
