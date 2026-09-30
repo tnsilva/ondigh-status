@@ -15,6 +15,7 @@
 
 
 name: Graphs CI
+
 on:
   schedule:
     - cron: "0 0 * * *"
