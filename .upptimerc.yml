@@ -1,31 +1,33 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Nome do site de status
+name: Ondigh Status
+# URL onde o site ficará hospedado
+url: https://status.ondigh.com.br
+# Link para o site principal no cabeçalho
+navbar:
+  - title: Ondigh Home
+    url: https://ondigh.com.br
 
+# Configuração dos monitores (as APIs que você quer acompanhar)
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: Ondigh API Health
+    url: https://ondigh.com.br/api/health
+    method: GET
+    # Você pode adicionar expectativa de status se necessário (padrão é 2xx)
 
-status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
-  navbar:
-    - title: Status
-      href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+  - name: Mercado Pago Status API
+    url: https://api.mercadopago.com/status
+    method: GET
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+  - name: Supabase Project API
+    # Substitua pelo subdomínio real do seu projeto do Supabase se preferir monitorar sua instância direta
+    url: https://status.supabase.com
+    method: GET
+
+# Configurações de notificação (opcional - remova o comentário para usar)
+# notifications:
+#   - type: discord
+#     webhookUrl: "$DISCORD_WEBHOOK_URL"
+
+# Configurações do Upptime
+assignees:
+  - ondigh # Seu usuário ou organização do GitHub
