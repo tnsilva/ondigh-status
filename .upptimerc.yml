@@ -18,23 +18,24 @@ navbar:
 # CONFIGURAÇÃO DOS MONITORES (Mapeamento das suas APIs)
 # ==============================================================================
 sites:
-  - name: Ondigh API
-    url: https://ondigh.com
+  - name: Ondigh API (Local Tunnel)
+    url: https://shiny-carrots-play.loca.lt
     method: GET
     assignees:
       - tnsilva
 
   - name: Gateway Mercado Pago
-    url: https://api.mercadopago.com/status
+    url: https://mercadopago.com
     method: GET
     assignees:
       - tnsilva
 
   - name: Supabase Platform
-    url: https://status.supabase.com
+    url: https://supabase.com
     method: GET
     assignees:
       - tnsilva
+
 
 # ==============================================================================
 # CONFIGURAÇÕES ADICIONAIS DO MONITORAMENTO
