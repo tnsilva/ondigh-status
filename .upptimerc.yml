@@ -19,7 +19,7 @@ navbar:
 # ==============================================================================
 sites:
   - name: Ondigh API (Local Tunnel)
-    url: https://shiny-carrots-play.loca.lt
+    url: https://ondigh-dev.loca.lt
     method: GET
     assignees:
       - tnsilva
